@@ -29,15 +29,15 @@
         4.  系统会弹出一个窗口，显示的**一串字符串**就是授权码。
         5.  *请记录下这个授权码，脚本运行中需要输入。*
 
-## 🚀 快速安装
+## 🚀 快速安装 / Quick Start
 
 使用 `wget` 下载并运行脚本。请确保你拥有 root 权限。
 
 ### 方式一：标准安装（推荐）
 
 ```bash
-# 1. 下载脚本 (请将下面的 URL 替换为你实际的 GitHub Raw 链接)
-wget -O install_monitor.sh [https://raw.githubusercontent.com/你的用户名/你的仓库名/main/install.sh](https://raw.githubusercontent.com/你的用户名/你的仓库名/main/install.sh)
+# 1. 下载脚本
+wget -O install_monitor.sh [https://raw.githubusercontent.com/Chidajiba/LinuxTrafficMonitor/main/install_monitor.sh](https://raw.githubusercontent.com/Chidajiba/LinuxTrafficMonitor/main/install_monitor.sh)
 
 # 2. 添加执行权限
 chmod +x install_monitor.sh
@@ -46,15 +46,15 @@ chmod +x install_monitor.sh
 sudo ./install_monitor.sh
 ````
 
-### 方式二：一键安装
+### 方式二：一键安装（懒人版）
 
 ```bash
-wget -qO- [https://raw.githubusercontent.com/你的用户名/你的仓库名/main/install.sh](https://raw.githubusercontent.com/你的用户名/你的仓库名/main/install.sh) | sudo bash
+wget -qO- [https://raw.githubusercontent.com/Chidajiba/LinuxTrafficMonitor/main/install_monitor.sh](https://raw.githubusercontent.com/Chidajiba/LinuxTrafficMonitor/main/install_monitor.sh) | sudo bash
 ```
 
 ## 📝 使用说明
 
-运行脚本后，终端会提示你输入相关信息，示例如下：
+运行脚本后，终端会交互式提示你输入相关信息，示例如下：
 
 ```text
 请输入 163 发件邮箱： xxxxx@163.com
@@ -64,7 +64,7 @@ wget -qO- [https://raw.githubusercontent.com/你的用户名/你的仓库名/mai
 
 ### 安装后的验证
 
-安装完成后，你可以执行以下命令测试是否正常工作：
+安装完成后，建议执行以下命令测试是否正常工作：
 
 1.  **查看定时任务**：
     脚本会自动添加 Crontab，每月 1 日凌晨 00:05 发送报告。
@@ -99,9 +99,4 @@ wget -qO- [https://raw.githubusercontent.com/你的用户名/你的仓库名/mai
 MIT License
 
 ```
-
-### 使用提示
-
-1.  **替换 URL：** 请务必将代码块中的 `https://raw.githubusercontent.com/你的用户名/你的仓库名/main/install.sh` 替换为你真实的 GitHub 文件地址。
-2.  **Raw 地址获取方式：** 将脚本上传到 GitHub 后 -> 点击该文件 -> 点击右上角的 **"Raw"** 按钮 -> 复制浏览器地址栏的链接。
 ```
