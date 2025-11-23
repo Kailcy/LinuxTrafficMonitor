@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-echo -e "${GREEN}==== 网络流量监控系统安装脚本 (vnStat 2.x + Postfix) - 自定义名称版 ====${NC}"
+echo -e "${GREEN}==== 网络流量监控系统安装脚本 (vnStat 2.x + Postfix) ====${NC}"
 
 #-----------------------------
 # 1. Root Check
@@ -240,5 +240,4 @@ echo "安装成功！"
 echo "服务器名称: $CUSTOM_SERVER_NAME"
 echo "发件邮箱: $SMTP_EMAIL"
 echo "收件邮箱: $RECIPIENT_EMAIL"
-echo "请检查收件箱，邮件标题应为： 📊 $CUSTOM_SERVER_NAME 月度流量报告..."
 echo -e "${GREEN}----------------------------------------------------------${NC}"
