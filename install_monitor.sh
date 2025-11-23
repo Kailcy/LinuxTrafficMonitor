@@ -32,13 +32,6 @@ if [[ -z "$SMTP_EMAIL" || -z "$SMTP_PASS" || -z "$RECIPIENT_EMAIL" ]]; then
     exit 1
 fi
 
-# Print confirmation (打印确认信息)
-echo -e "${GREEN}----------------------------------------------------------${NC}"
-echo "发件邮箱 (163): $SMTP_EMAIL"
-echo "收件邮箱: $RECIPIENT_EMAIL"
-echo -e "${GREEN}----------------------------------------------------------${NC}"
-
-
 #-----------------------------
 # 3. Install Dependencies (安装依赖)
 #-----------------------------
@@ -206,11 +199,11 @@ systemctl restart vnstat
 echo -e "${GREEN}[6/6] 正在运行测试...${NC}"
 bash "$REPORT_SCRIPT"
 
-echo -e "${GREEN}==============================================================${NC}"
-echo " 安装完成！"
-echo " 邮件发送已修正，现在应该能正确显示 HTML 报告了。"
-echo " 检查要点："
-echo " 1. 如果没有收到邮件，请检查 /var/log/mail.log"
-echo " 2. 如果流量显示为 0，是因为 vnStat 刚安装，还未统计到数据。"
-echo " 3. 手动测试命令： bash $REPORT_SCRIPT"
-echo -e "${GREEN}==============================================================${NC}"
+# Print confirmation (打印确认信息)
+echo -e "${GREEN}----------------------------------------------------------${NC}"
+echo "安装成功！"
+echo "发件邮箱 (163): $SMTP_EMAIL"
+echo "收件邮箱: $RECIPIENT_EMAIL"
+echo "查看定时任务：crontab -l"
+echo "手动发送测试报告：sudo bash /usr/local/bin/vnstat_monthly_report.sh"
+echo -e "${GREEN}----------------------------------------------------------${NC}"
