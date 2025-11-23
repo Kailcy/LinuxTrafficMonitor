@@ -38,23 +38,23 @@
 
 #### 1. 下载脚本
 ```bash
-wget -O install_monitor.sh https://raw.githubusercontent.com/Kailcy/LinuxTrafficMonitor/refs/heads/main/install_monitor.sh
-````
+wget -O install_monitor.sh https://raw.githubusercontent.com/Kailcy/LinuxTrafficMonitor/main/install_monitor.sh
+```
 
 #### 2. 添加执行权限
 ```bash
 chmod +x install_monitor.sh
-````
+```
 
 #### 3. 运行脚本
 ```bash
 sudo ./install_monitor.sh
-````
+```
 
 ### 方式二：一键安装（懒人版）
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/Kailcy/LinuxTrafficMonitor/refs/heads/main/install_monitor.sh | sudo bash
+wget -qO- https://raw.githubusercontent.com/Kailcy/LinuxTrafficMonitor/main/install_monitor.sh | sudo bash
 ```
 
 ## 📝 使用说明
