@@ -85,6 +85,16 @@ EMAIL_TO="$RECIPIENT_EMAIL"
 EMAIL_FROM="$SMTP_EMAIL"
 
 CURRENT_YM=\$(date +"%Y-%m")
+# 如果今天是 1 号，则生成“上个月”的报告
+# 否则（如手动测试），生成“当前月”的报告
+if [ \$(date +%d) -eq 01 ]; then
+    TARGET_DATE=\$(date -d "yesterday" +"%Y-%m")
+    REPORT_TITLE="上月流量报告"
+else
+    TARGET_DATE=\$(date +"%Y-%m")
+    REPORT_TITLE="本月流量报告(实时)"
+fi
+
 CSV_FILE="\$OUTPUT_DIR/\$CURRENT_YM-traffic.csv"
 HTML_FILE="\$OUTPUT_DIR/\$CURRENT_YM-traffic.html"
 
