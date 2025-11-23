@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-echo -e "${GREEN}==== 网络流量监控系统安装脚本 (vnStat 2.x + Postfix) ====${NC}"
+echo -e "${GREEN}==== 网络流量监控系统安装脚本 (vnStat 2.x + Postfix) - 自定义名称版 ====${NC}"
 
 #-----------------------------
 # 1. Root Check
@@ -178,12 +178,16 @@ echo "\$HTML_CONTENT" > "\$HTML_FILE"
 # 发送邮件部分
 # ==========================================
 BOUNDARY="====_Boundary_\$(date +%s)_===="
-MAIL_SUBJECT="📊 \${SERVER_NAME} 月度流量报告 (\$CURRENT_YM)"
+RAW_SUBJECT="📊 \${SERVER_NAME} 月度流量报告 (\$CURRENT_YM)"
+
+# 修复关键点：对标题进行 Base64 编码 (RFC 2047)
+# 否则中文和 Emoji 会导致邮件被 163 服务器拒收
+ENCODED_SUBJECT=\$(echo -n "\$RAW_SUBJECT" | base64 | tr -d '\n')
 
 (
     echo "From: Server Monitor <\$EMAIL_FROM>"
     echo "To: \$EMAIL_TO"
-    echo "Subject: \$MAIL_SUBJECT"
+    echo "Subject: =?UTF-8?B?\${ENCODED_SUBJECT}?="
     echo "MIME-Version: 1.0"
     echo "Content-Type: multipart/mixed; boundary=\"\$BOUNDARY\""
     echo ""
