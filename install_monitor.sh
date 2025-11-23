@@ -25,7 +25,6 @@ read -p "请输入 163 发件邮箱： " SMTP_EMAIL
 read -p "请输入 163 邮箱授权码： " SMTP_PASS
 read -p "请输入收件邮箱： " RECIPIENT_EMAIL
 
-
 # 简单的空值检查
 if [[ -z "$SMTP_EMAIL" || -z "$SMTP_PASS" || -z "$RECIPIENT_EMAIL" ]]; then
     echo -e "${RED}错误：邮箱信息不能为空。请确保在交互式环境下运行脚本。${NC}"
